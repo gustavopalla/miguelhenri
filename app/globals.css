@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Archivo", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --color-ink: #0a0a0b;
+  --color-panel: #111113;
+  --color-card: #141416;
+  --color-paper: #eceae4;
+  --color-mute: #8c8982;
+  --color-dim: #5e5c57;
+  --color-soft: #c9c6bf;
+  --color-soft2: #b5b2ab;
+  --color-line: rgba(236, 234, 228, 0.12);
+  --color-line2: rgba(236, 234, 228, 0.25);
+  --animate-marquee: mh-marquee 30s linear infinite;
+}
+
+@layer base {
+  :root {
+    --acc: #f2a23c;
+  }
+  html {
+    scroll-behavior: smooth;
+    background: #0a0a0b;
+  }
+  body {
+    margin: 0;
+    background: #0a0a0b;
+    color: #eceae4;
+    -webkit-font-smoothing: antialiased;
+  }
+  a {
+    color: #eceae4;
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--acc, #f2a23c);
+  }
+  ::selection {
+    background: var(--acc, #f2a23c);
+    color: #0a0a0b;
+  }
+}
+
+@keyframes mh-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes mh-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
